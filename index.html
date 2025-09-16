@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserva de viaje</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Reserva de viaje</h1>
+
+    <!-- Fecha actual fuera del formulario -->
+    <label for="fechaActual">Fecha actual</label>
+    <input type="text" id="fechaActual" readonly>
+
+    <!-- Formulario -->
+    <form id="formulario">
+      <!-- Nombre -->
+      <label for="nombre">Nombre<span class="obligatorio">*</span></label>
+      <input type="text" id="nombre" maxlength="12" required autocomplete="name" placeholder="Ej: AnaPerez12">
+      <p id="validaNombre" class="mensaje"></p>
+
+      <!-- DNI -->
+      <label for="dni">DNI<span class="obligatorio">*</span></label>
+      <input type="text" id="dni" maxlength="9" required placeholder="Ej: 12345678Z">
+      <p id="validaDni" class="mensaje"></p>
+
+      <!-- Email -->
+      <label for="email">Correo electrónico<span class="obligatorio">*</span></label>
+      <input type="text" id="email" required autocomplete="email" placeholder="Ej: ejemplo@email.com">
+      <p id="validaEmail" class="mensaje"></p>
+
+      <!-- Destino -->
+      <label for="destino">Destino<span class="obligatorio">*</span></label>
+      <select id="destino" required>
+        <option value="">Seleccionar destino</option>
+        <option>Hong Kong</option>
+        <option>Nueva York</option>
+        <option>Múnich</option>
+        <option>Tenerife</option>
+        <option>Canberra</option>
+      </select>
+
+      <!-- Fechas -->
+      <label for="salida">Fecha de salida<span class="obligatorio">*</span></label>
+      <input type="date" id="salida" required placeholder="dd/mm/aaaa">
+
+      <label for="regreso">Fecha de regreso<span class="obligatorio">*</span></label>
+      <input type="date" id="regreso" required placeholder="dd/mm/aaaa">
+      <p id="validaFechas" class="mensaje"></p>
+
+      <!-- Clase de viaje -->
+      <label style="font-weight: bold;">Clase de viaje:<span class="obligatorio">*</span></label>
+      <label style="font-weight: normal;"><input type="radio" name="clase" value="Económica" required> Económica</label>
+      <label style="font-weight: normal;"><input type="radio" name="clase" value="Business"> Business</label>
+      <label style="font-weight: normal;"><input type="radio" name="clase" value="Primera Clase"> Primera Clase</label>
+      <p id="advertenciaClase" class="mensaje"></p>
+
+      <!-- Seguro -->
+      <label><input type="checkbox" id="seguro"> Deseo contratar un seguro de viaje</label>
+
+      <div id="condicionesSeguro" style="display: none;">
+        <label><input type="checkbox" id="aceptarCondiciones"> Acepto los términos y condiciones del seguro</label>
+        <p id="validaCondiciones" class="mensaje"></p>
+      </div>
+
+      <!-- Botones -->
+      <button type="button" id="enviar">Enviar</button>
+      <button type="reset" id="reiniciar">Reiniciar</button>
+
+      <!-- Resumen -->
+      <label for="resumen">Resumen del viaje</label>
+      <textarea id="resumen" rows="6" disabled></textarea>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+      <hr>
+      <p>Autor: Hugo Muñoz Pérez – <a href="mailto:mperez.hugo6@gmail.com">mperez.hugo6@gmail.com</a></p>
+      <p>Disfrute de su viaje.</p>
+    </footer>
+  </main>
+
+  <script src="sript.js"></script>
+</body>
+</html>
+
+<!--Compatibilidad garantizada con los siguientes navegadores:
+      - Google Chrome   ≥ 26  
+      - Mozilla Firefox ≥ 29  
+      - Microsoft Edge  ≥ 12 
+      - Safari          ≥ 9  
+      - Opera           ≥ 15 
+-->
